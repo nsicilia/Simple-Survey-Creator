@@ -33,7 +33,7 @@ const QuestionForm = ({ setTitle, setType, type, addQuestion, setOption1, setOpt
 
 
       {type === "multiple" ? (
-        <div className='grid grid-cols-2 gap-4'>
+        <div className={style.qgrid}>
 
           <div>
             <label className={style.qTitle} >Choose 1</label>
@@ -52,7 +52,7 @@ const QuestionForm = ({ setTitle, setType, type, addQuestion, setOption1, setOpt
       }
 
       {type === "bool" ? (
-        <div className='grid grid-cols-2 gap-4'>
+        <div className={style.qgrid}>
 
           <div>
             <label className={style.qTitle}>Choose 1 (ex. true)</label>
@@ -68,7 +68,7 @@ const QuestionForm = ({ setTitle, setType, type, addQuestion, setOption1, setOpt
       ) : null
       }
 
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={addQuestion}>
+      <button className={style.addbtn} onClick={addQuestion}>
         Add Quesiton
       </button>
     </div>

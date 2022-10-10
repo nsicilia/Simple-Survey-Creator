@@ -71,11 +71,11 @@ function App() {
 
 
   return (
-    <div className='container-full min-h-screen bg-[#F7F2E8] grid pb-10'>
-      <h1 className=" text-4xl font-serif font-normal text-center text-blue-900 pt-5 pb-10">Simple Question UI</h1>
+    <div className={styles.maincontainer}>
+      <h1 className={styles.uititle}>Simple Question UI</h1>
 
-      <div class="grid overflow-hidden grid-cols-3 grid-rows-1 gap-2 pb-10">
-        <div class="box col-start-2 col-span-1">
+      <div class={styles.qmakercontainer}>
+        <div class={styles.qmakercolumn}>
           <QuestionForm
             setTitle={setTitle}
             setType={setType}
@@ -91,14 +91,14 @@ function App() {
 
 
 
-      <div class="grid overflow-hidden grid-cols-4 grid-rows-1 gap-2 mt-10">
-        <div class="box col-start-2 col-span-2">
+      <div class={styles.qlistcontainer}>
+        <div class={styles.qlistcolumn}>
 
           <div className=''>
             {questions.map((question) => (
-              <div className='w-full rounded bg-stone-50 overflow-hidden rounded-md border border-zinc-300 mt-10' key={question.index}>
+              <div className={styles.question} key={question.index}>
 
-                <div className='grid place-content-end'>
+                <div className={styles.btngrid}>
                   <div>
                     <button className={styles.upbtn} onClick={() => moveQuestion(question, 'up')}>↑</button>
                     <button className={styles.downbtn} onClick={() => moveQuestion(question, 'down')}>↓</button>

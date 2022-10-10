@@ -1,8 +1,35 @@
 
-.test{
-    @apply
-        text-violet-700
-    }
+.maincontainer{
+    @apply min-h-screen bg-[#F7F2E8] grid pb-10
+}
+
+.uititle{
+    @apply  text-4xl font-serif font-normal text-center text-blue-900 pt-5 pb-10;
+}
+
+.qmakercontainer{
+    @apply grid overflow-hidden grid-cols-3 grid-rows-1 gap-2 pb-10;
+}
+
+.qmakercolumn{
+    @apply col-start-2 col-span-1;
+}
+
+.qlistcontainer{
+    @apply grid overflow-hidden grid-cols-4 grid-rows-1 gap-2 mt-10;
+}
+
+.qlistcolumn{
+    @apply col-start-2 col-span-2;
+}
+
+.question{
+    @apply w-full rounded bg-stone-50 overflow-hidden rounded-md border border-zinc-300 mt-10;
+}
+
+.btngrid{
+@apply grid place-content-end;
+}
 
 .upbtn{
     @apply bg-blue-500 hover:bg-blue-700 text-white font-bold border-l border-b border-zinc-300 rounded-bl-lg py-1 px-2;

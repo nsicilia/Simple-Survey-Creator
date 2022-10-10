@@ -9,6 +9,9 @@
     }
 
 
+    .qgrid{
+        @apply grid grid-cols-2 gap-4;
+    }
 
 
     .formContainer{
@@ -21,6 +24,10 @@
 
     .qText{
         @apply w-full rounded-md border border-zinc-300 bg-white py-3 px-6 text-base font-medium text-slate-700 outline-none focus:border-green-700 focus:shadow-md mb-5;
+    }
+
+    .addbtn{
+        @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
     }
 
 }
