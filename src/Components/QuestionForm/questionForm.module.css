@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    h1 {
+        @apply mb-3 block text-2xl font-semibold text-center text-slate-700;
+    }
+
+
+
+
+    .formContainer{
+        @apply w-full rounded bg-stone-50 overflow-hidden shadow-lg px-10 py-5;
+    }
+    
+    .qTitle {
+        @apply mb-3 block text-base font-medium  text-slate-700;
+      }
+
+    .qText{
+        @apply w-full rounded-md border border-zinc-300 bg-white py-3 px-6 text-base font-medium text-slate-700 outline-none focus:border-green-700 focus:shadow-md mb-5;
+    }
+
+}

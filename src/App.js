@@ -1,6 +1,8 @@
 import './App.css';
+import styles from './App.module.css'
 import React, { useState } from 'react';
-import QuestionBox from './Components/inputField/QuestionBox';
+import questionBox from './Components/inputField/questionBox';
+import QuestionForm from './Components/QuestionForm/questionForm';
 
 function App() {
   var [questions, setQuestions] = useState([]);
@@ -69,87 +71,50 @@ function App() {
 
 
   return (
-    <div>
-      <h1>Simple Question UI</h1>
-      <div style={{ border: "5px solid red" }}>
-        <h1>Create Question</h1>
+    <div className='container-full min-h-screen bg-[#F7F2E8] grid pb-10'>
+      <h1 className=" text-4xl font-serif font-normal text-center text-blue-900 pt-5 pb-10">Simple Question UI</h1>
 
-        <label>Question</label>
-        <input
-          type="text"
-          placeholder="Enter Question"
-          onChange={(e) => setTitle(e.target.value)}
-        />
-
-
-        <label>Question Type</label>
-        <select
-          onChange={(e) => setType(e.target.value)}
-        >
-          <option value="text">Text</option>
-          <option value="bool">Boolean</option>
-          <option value="number">Number</option>
-          <option value="multiple">Multiple Choice</option>
-        </select>
-
-        {type === "multiple" ? (
-          <div>
-
-            <label>Choose 1</label>
-            <input type="text" placeholder="Enter Option 1" onChange={(e) => setOption1(e.target.value)} />
-
-            <label>Choose 2</label>
-            <input type="text" placeholder="Enter Option 2" onChange={(e) => setOption2(e.target.value)} />
-
-            <label>Choose 3</label>
-            <input type="text" placeholder="Enter Option 3" onChange={(e) => setOption3(e.target.value)} />
-
-            <label>Choose 4</label>
-            <input type="text" placeholder="Enter Option 4" onChange={(e) => setOption4(e.target.value)} />
-
-          </div>
-        ): null
-        }
-
-        {type === "bool" ? (
-          <div>
-
-            <label>Choose 1 (ex. true)</label>
-            <input type="text" placeholder="Enter Option 1" onChange={(e) => setOption1(e.target.value)} />
-
-            <label>Choose 2(ex. false)</label>
-            <input type="text" placeholder="Enter Option 2" onChange={(e) => setOption2(e.target.value)} />
-
-          </div>
-        ): null
-        }
-
-        <button className="button" onClick={addQuestion}>
-          +
-        </button>
+      <div class="grid overflow-hidden grid-cols-3 grid-rows-1 gap-2 pb-10">
+        <div class="box col-start-2 col-span-1">
+          <QuestionForm
+            setTitle={setTitle}
+            setType={setType}
+            type={type}
+            addQuestion={addQuestion}
+            setOption1={setOption1}
+            setOption2={setOption2}
+            setOption3={setOption3}
+            setOption4={setOption4}
+          />
+        </div>
       </div>
 
 
 
-      <div>
-        {questions.map((question) => (
-          <div key={question.index}>
-            {QuestionBox(question)}
+      <div class="grid overflow-hidden grid-cols-4 grid-rows-1 gap-2 mt-10">
+        <div class="box col-start-2 col-span-2">
 
-            <button className="button" onClick={() => removeQuestion(question)}>
-              -
-            </button>
+          <div className=''>
+            {questions.map((question) => (
+              <div className='w-full rounded bg-stone-50 overflow-hidden rounded-md border border-zinc-300 mt-10' key={question.index}>
 
-            <button className="button" onClick={() => moveQuestion(question, 'up')}>
-              ^
-            </button>
+                <div className='grid place-content-end'>
+                  <div>
+                    <button className={styles.upbtn} onClick={() => moveQuestion(question, 'up')}>↑</button>
+                    <button className={styles.downbtn} onClick={() => moveQuestion(question, 'down')}>↓</button>
+                    <button className={styles.removebtn} onClick={() => removeQuestion(question)}>x</button>
+                  </div>
+                </div>
 
-            <button className="button" onClick={() => moveQuestion(question, 'down')}>
-              v
-            </button>
+                {questionBox(question)}
+
+              </div>
+            ))}
           </div>
-        ))}
+
+        </div>
       </div>
+
     </div>
   );
 }

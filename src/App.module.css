@@ -1,0 +1,17 @@
+
+.test{
+    @apply
+        text-violet-700
+    }
+
+.upbtn{
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold border-l border-b border-zinc-300 rounded-bl-lg py-1 px-2;
+}
+
+.downbtn{
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold border-l border-b border-zinc-300 py-1 px-2;
+}
+
+.removebtn{
+    @apply bg-red-500 hover:bg-red-700 text-white font-bold border-l border-b border-zinc-300 py-1 px-2;
+}
