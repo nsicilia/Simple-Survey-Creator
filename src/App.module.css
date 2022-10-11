@@ -8,19 +8,19 @@
 }
 
 .qmakercontainer{
-    @apply grid overflow-hidden grid-cols-3 grid-rows-1 gap-2 pb-10;
+    @apply grid overflow-hidden grid-cols-1 md:grid-cols-3 grid-rows-1 gap-2 pb-10;
 }
 
 .qmakercolumn{
-    @apply col-start-2 col-span-1;
+    @apply col-start-1 md:col-start-2 col-span-1;
 }
 
 .qlistcontainer{
-    @apply grid overflow-hidden grid-cols-4 grid-rows-1 gap-2 mt-10;
+    @apply grid overflow-hidden grid-cols-1 md:grid-cols-4 grid-rows-1 gap-2 mt-10;
 }
 
 .qlistcolumn{
-    @apply col-start-2 col-span-2;
+    @apply col-start-1 md:col-start-2 col-span-2;
 }
 
 .question{
