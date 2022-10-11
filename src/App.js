@@ -19,8 +19,7 @@ function App() {
   const addQuestion = () => {
     setCount((prevState) => prevState + 1);
     setQuestions((prevState) => {
-      const newQuestions = Array.from(prevState); // copy the array
-      //questions.push({index: count, title: title, type: type, option1: option1, option2: option2, option3: option3, option4: option4});
+      const newQuestions = Array.from(prevState); 
       questions.push({ index: count, title: title, type: type, options: [option1, option2, option3, option4] });
       return newQuestions;
     });
@@ -29,7 +28,7 @@ function App() {
 
 
   const removeQuestion = (test) => {
-    //console.log(test);
+
     setQuestions((prevState) => {
       let newQuestions = Array.from(prevState);
       newQuestions = newQuestions.filter((item) => item !== test);
@@ -40,7 +39,7 @@ function App() {
 
 
   const moveQuestion = (question, direction) => {
-    //console.log(test);
+
     setQuestions((prevState) => {
       let newQuestions = Array.from(prevState);
       let index = newQuestions.indexOf(question);
@@ -114,6 +113,12 @@ function App() {
 
         </div>
       </div>
+
+      {questions.length > 0 &&
+      <button className={styles.submitbtn}>submit</button>
+      }
+
+      
 
     </div>
   );
