@@ -115,7 +115,7 @@ function App() {
       </div>
 
       {questions.length > 0 &&
-      <button className={styles.submitbtn}>submit</button>
+      <input className={styles.submitbtn} type="submit" value="Submit" />
       }
 
       
